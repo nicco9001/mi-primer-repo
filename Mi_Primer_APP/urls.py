@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Coder_App.views import (prueba, mostrar_index, listar_familiar, listar_cursos)
+from Coder_App.views import (formulario_curso, prueba, mostrar_index, listar_familiar, listar_cursos, formulario_curso)
 from manejador_contenido.views import (mostrar_other, mostrar_profile)
 
 urlpatterns = [
@@ -26,4 +26,5 @@ urlpatterns = [
     path( 'cursos/', listar_cursos),
     path( 'other/', mostrar_other),
     path( 'profile/', mostrar_profile),
+    path( 'formulario/', formulario_curso),
 ]

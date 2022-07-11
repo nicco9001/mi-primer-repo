@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Coder_App.views import (prueba, mostrar_index, listar_familiar, listar_cursos)
+from manejador_contenido.views import (mostrar_other, mostrar_profile)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,6 @@ urlpatterns = [
     path( 'index/', mostrar_index),
     path( 'familiares/', listar_familiar),
     path( 'cursos/', listar_cursos),
+    path( 'other/', mostrar_other),
+    path( 'profile/', mostrar_profile),
 ]

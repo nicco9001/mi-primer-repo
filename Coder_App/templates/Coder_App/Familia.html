@@ -11,10 +11,12 @@
 <body>
 
     {% block content %}
-
+    <br>
     <ul>
     {% for familiar in familiares %}
-        <li>{{familiar.nombre}}, {{familiar.apellido}}, {{familiar.edad}}</li>
+        <li>Nombre: {{familiar.nombre}}, 
+            Apellido: {{familiar.apellido}}, 
+            Edad: {{familiar.edad}}</li>
     {% endfor %}
     </ul>
 

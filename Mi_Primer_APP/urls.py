@@ -23,9 +23,9 @@ urlpatterns = [
     path( 'saludar/', prueba),
     path( '', mostrar_index, name = "Inicio"),
     path( 'familiares/', listar_familiar, name= "Familia"),
-    path( 'cursos/', listar_cursos),
+    path( 'cursos/', listar_cursos, name="Cursos"),
     path( 'base/', mostrar_base),
     path( 'other/', mostrar_other),
     path( 'profile/', mostrar_profile),
-    path( 'formulario/', formulario_curso),
+    path( 'formulario/', formulario_curso, name="Carga Alumno"),
 ]

@@ -2,12 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% extends 'Coder_App/base.html' %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
 </head>
 <body>
+    {% block content %}
+    <br>
     {% if mi_formulario.errors %}
 
     <p style="color: red;"> Revise los datos ingresados.</p>
@@ -20,9 +23,11 @@
         <table>
             
             {{mi_formulario.as_table}}
-            
+                
             <button type="submit"> ENVIAR</button>
+        
         </table>
     </form>
+    {% endblock %}
 </body>
 </html>

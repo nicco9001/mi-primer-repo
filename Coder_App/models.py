@@ -6,6 +6,9 @@ class Familia(models.Model):
     apellido = models.CharField(max_length=40)
     edad = models.IntegerField()
 
+    def __str__(self):
+        return f"{self.nombre} {self.apellido} {self.edad}"
+
 class Curso(models.Model):
 
     nombre = models.CharField(max_length=40)

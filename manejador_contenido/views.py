@@ -1,6 +1,9 @@
 from multiprocessing import context
 from django.shortcuts import render
 
+def mostrar_base(request):
+    return render(request, 'manejador_contenido/base.html', {})
+
 def mostrar_other(request):
     return render(request, 'manejador_contenido/other.html', {})
 

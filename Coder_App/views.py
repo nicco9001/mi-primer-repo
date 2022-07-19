@@ -26,16 +26,18 @@ def listar_cursos(request):
 def formulario_curso(request):
 
     if request.method == "POST":
-        mi_formulario = CursoFormulario(request.POST)
-        if  mi_formulario.is_valid:
+        mi_formulario = CursoFormulario(request.POST) #acá llega la información de la HTML.-
+
+        if  mi_formulario.is_valid:     #Si pasa la validación de Django
             datos = mi_formulario.cleaned_data 
-            curso = Curso(nombre=datos["nombre"], camada=datos["camada"])
+            # acá se instancia el curso:
+            curso = Curso(nombre=datos["nombre"], modalidad=datos["modalidad"], camada=datos["camada"])
             curso.save()
             chequeo = print ("Se ha registrado con exito el formulario. Muchas Gracias")
             return render(request, "Coder_App/curso_formulario.html")
    
     else:
         mi_formulario = CursoFormulario()
-    return render(request, "Coder_App/curso_formulario.html", {"mi_formulario":mi_formulario})
+        return render(request, "Coder_App/curso_formulario.html", {"mi_formulario":mi_formulario})
 
 # Create your views here.

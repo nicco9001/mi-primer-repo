@@ -20,21 +20,20 @@ def listar_familiar(request):
 
 def listar_cursos(request):
     context = {}
-    context["cursos"] = Curso.objects.all()
+    context["cursos"] = Curso.objects.all() #KEY que se usa luego en el HTML.-
     return render (request, 'Coder_App/Curso.html', context)
 
 def formulario_curso(request):
-
-    if request.method == "POST":
+    if request.method == 'POST':
         mi_formulario = CursoFormulario(request.POST) #acá llega la información de la HTML.-
 
-        if  mi_formulario.is_valid:     #Si pasa la validación de Django
+        if  mi_formulario.is_valid():     #Si pasa la validación de Django
             datos = mi_formulario.cleaned_data 
             # acá se instancia el curso:
-            curso = Curso(nombre=datos["nombre"], modalidad=datos["modalidad"], camada=datos["camada"])
+            curso = Curso(nombre = datos["nombre_curso"], modalidad = datos["modalidad"], camada = datos["camada"])
+            #Curso refiere al modelo, los keys al forms.-
             curso.save()
-            chequeo = print ("Se ha registrado con exito el formulario. Muchas Gracias")
-            return render(request, "Coder_App/curso_formulario.html")
+        return render(request, "Coder_App/index.html")
    
     else:
         mi_formulario = CursoFormulario()

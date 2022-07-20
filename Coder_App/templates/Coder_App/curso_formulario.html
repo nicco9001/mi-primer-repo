@@ -11,7 +11,7 @@
 <body>
     {% block content %}
     <br>
-    {% if mi_formulario.errors %}
+    {% if mi_formulario.errors %} <!--Variable declarada en VIEWs-->
 
     <p style="color: red;"> Revise los datos ingresados.</p>
 
@@ -19,13 +19,9 @@
 
     <form action="" method="POST">
         {%csrf_token%}
-
         <table>
-            
-            {{mi_formulario.as_table}}
-                
+            {{mi_formulario.as_table}} <!--NOMBRE DE LA VARIABLE EN VIEWs-->
             <button type="submit"> ENVIAR</button>
-        
         </table>
     </form>
     {% endblock %}
